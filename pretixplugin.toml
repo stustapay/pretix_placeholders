@@ -1,0 +1,5 @@
+[plugin]
+package = "pretix_stustapay_placeholders"
+modules = [ "pretix_stustapay_placeholders" ]
+marketplace_name = "pretix_stustapay_placeholders"
+

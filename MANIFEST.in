@@ -1,0 +1,5 @@
+recursive-include pretix_stustapay_placeholders/static *
+recursive-include pretix_stustapay_placeholders/templates *
+recursive-include pretix_stustapay_placeholders/locale *
+include LICENSE
+exclude .gitlab-ci.yml
