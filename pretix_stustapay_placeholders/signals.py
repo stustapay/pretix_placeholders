@@ -12,11 +12,18 @@ def secret_hash(secret: str) -> str:
 
 @receiver(register_text_placeholders, dispatch_uid="stustapay_pretix_placeholders")
 def register_placeholder_renderers(sender, **kwargs):
+    """This is only visible in email templates that are send to individual ticket holders.
+
+    By default this is deactivated but can be activated in
+    Event > Settings > Customer and attendee data > Ask for email addresses pre ticket > Ask and require input
+
+    Login link for StuStaPay: https://<url>/login?ticketVoucher={ticket_voucher_hash}
+    """
     return (
         SimpleFunctionalTextPlaceholder(
             "ticket_voucher_hash",
-            ["order"],
-            lambda order: secret_hash(order.secret),
+            ["position"],
+            lambda position: secret_hash(position.secret),
             "sOcMf0QL8CqE9O4U6ChJpXZjcYjo74zB",
         ),
     )
