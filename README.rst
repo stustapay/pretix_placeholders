@@ -1,5 +1,5 @@
 Pretix Placeholder Plugin for StuStaPay
-==========================
+=======================================
 
 This is a plugin for `pretix`_. 
 
